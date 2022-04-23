@@ -1,13 +1,145 @@
-body {
-  margin: 0;
+:root {
+  /*
+    Measure is used to define the width of a line of text
+    @see https://every-layout.dev/rudiments/axioms/
+  */
+  --measure: 60ch;
+  --line-height: 1.5rem;
+
+  color: var(--font-color);
+  font-size: var(--font-md);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* Font colours */
+  --font-color: #282c34;
+
+  /* Font sizes */
+  --font-xs: var(--s-2);
+  --font-sm: var(--s-1);
+  --font-md: var(--s0);
+  --font-lg: var(--s1);
+  --font-xl: var(--s2);
+  --font-2xl: var(--s3);
+  --font-3xl: var(--s4);
+  --font-4xl: var(--s5);
+  --font-5xl: var(--s6);
+  --font-6xl: var(--s7);
+
+  /* Font weights */
+  --font-hairline: 100;
+  --font-thin: 200;
+  --font-light: 300;
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-extrabold: 800;
+  --font-black: 900;
+
+  --monospace: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+
+  /*
+    Modular scale for visual harmony
+    Ratio based off of font-size * line-height
+    @see https://every-layout.dev/rudiments/modular-scale/
+  */
+  --ratio: 1.5;
+  --s-5: calc(var(--s-4) / var(--ratio));
+  --s-4: calc(var(--s-3) / var(--ratio));
+  --s-3: calc(var(--s-2) / var(--ratio));
+  --s-2: calc(var(--s-1) / var(--ratio));
+  --s-1: calc(var(--s0) / var(--ratio));
+  --s0: 1rem;
+  --s1: calc(var(--s0) * var(--ratio));
+  --s2: calc(var(--s1) * var(--ratio));
+  --s3: calc(var(--s2) * var(--ratio));
+  --s4: calc(var(--s3) * var(--ratio));
+  --s5: calc(var(--s4) * var(--ratio));
+  --s6: calc(var(--s5) * var(--ratio));
+  --s7: calc(var(--s6) * var(--ratio));
+
+  --border-thin: var(--s-5) solid;
+  --border-thick: var(--s-4) solid;
+
+  --shadow-outline: 0 0 0 3px rgba(66, 153, 225, 0.6);
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  line-height: var(--line-height);
+  margin: 0;
+}
+
+/* Set measure and exclude elements that shouldn't have it */
+* {
+  max-width: var(--measure);
+}
+html,
+body,
+div,
+header,
+nav,
+main,
+footer {
+  max-width: none;
+}
+
+/*
+  Remove list styles on ul, ol elements with a list role,
+  which suggests default styling will be removed
+*/
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: var(--monospace);
 }
