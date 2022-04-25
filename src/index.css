@@ -6,16 +6,13 @@
   --measure: 60ch;
   --line-height: 1.5rem;
 
-  color: var(--font-color);
+  color: var(--dark);
   font-size: var(--font-md);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  /* Font colours */
-  --font-color: #282c34;
 
   /* Font sizes */
   --font-xs: var(--s-2);
@@ -49,6 +46,7 @@
     @see https://every-layout.dev/rudiments/modular-scale/
   */
   --ratio: 1.5;
+  --s-6: calc(var(--s-5) / var(--ratio));
   --s-5: calc(var(--s-4) / var(--ratio));
   --s-4: calc(var(--s-3) / var(--ratio));
   --s-3: calc(var(--s-2) / var(--ratio));
@@ -63,10 +61,51 @@
   --s6: calc(var(--s5) * var(--ratio));
   --s7: calc(var(--s6) * var(--ratio));
 
-  --border-thin: var(--s-5) solid;
+  /* Borders & outlines */
+  --border-thin: var(--s-6) solid;
   --border-thick: var(--s-4) solid;
 
   --shadow-outline: 0 0 0 3px rgba(66, 153, 225, 0.6);
+
+  /* Colours */
+  --dark: var(--gray800); /* #282c34; */
+  --light: var(--white);
+
+  --black: #000000;
+  --white: #ffffff;
+
+  --gray50: #f8fafc;
+  --gray100: #f1f5f9;
+  --gray200: #e2e8f0;
+  --gray300: #cbd5e1;
+  --gray400: #94a3b8;
+  --gray500: #64748b;
+  --gray600: #475569;
+  --gray700: #334155;
+  --gray800: #1e293b;
+  --gray900: #0f172a;
+
+  --green50: #f0fdf4;
+  --green100: #dcfce7;
+  --green200: #bbf7d0;
+  --green300: #86efac;
+  --green400: #4ade80;
+  --green500: #22c55e;
+  --green600: #16a34a;
+  --green700: #15803d;
+  --green800: #166534;
+  --green900: #14532d;
+
+  --yellow50: #fefce8;
+  --yellow100: #fef9c3;
+  --yellow200: #fef08a;
+  --yellow300: #fde047;
+  --yellow400: #facc15;
+  --yellow500: #eab308;
+  --yellow600: #ca8a04;
+  --yellow700: #a16207;
+  --yellow800: #854d0e;
+  --yellow900: #713f12;
 }
 
 /* Box sizing rules */
